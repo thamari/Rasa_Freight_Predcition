@@ -1,0 +1,11 @@
+version: "3.1"
+
+stories:
+- story: Predict freight value after form
+  steps:
+  - intent: calculate_freight_value
+  - action: freight_value_form
+  - active_loop: freight_value_form
+  - active_loop: null
+  - action: predict_freight_value
+

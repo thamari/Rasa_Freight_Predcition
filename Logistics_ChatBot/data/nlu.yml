@@ -1,0 +1,129 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey
+    - Hi there
+    - Good morning
+    - Good afternoon
+    - Hi! How can you assist me today?
+    - Hello! How are you?
+    - hi
+- intent: calculate_freight_value
+  examples: |
+    - I need to predict the freight value
+    - Can you predict the freight value for me?
+    - I want to know the freight value
+    - Help me calculate the freight value
+    - What is the freight value for my product?
+    - Can you estimate the freight cost?
+    - I'd like to get a freight value estimate
+    - i need to calculate freight value
+    - i want to predict freight value
+    - i want to calculate freight value
+- intent: affirm
+  examples: |
+    - Yes
+    - Sure
+    - Absolutely
+    - Of course
+    - Yes, please
+    - Yeah
+    - Yup
+- intent: deny
+  examples: |
+    - No
+    - No, thanks
+    - Not really
+    - I don't think so
+    - No, I don't
+    - Nope
+- intent: stop
+  examples: |
+    - Stop
+    - Cancel
+    - Exit
+    - Quit
+    - End
+    - Please stop
+- intent: inform_weight
+  examples: |
+    - The weight is [500](product_weight_g) grams
+    - It weighs [1000](product_weight_g) grams
+    - The package weight is [300](product_weight_g) grams
+    - My product's weight is [1200](product_weight_g) grams
+    - [250](product_weight_g) grams
+    - [750](product_weight_g) g
+    - [1500](product_weight_g) grams
+    - Weight of the product is [450](product_weight_g) grams
+    - [700](product_weight_g) grams weight
+    - the weight is [400](product_weight_g) grams
+    - the weight is [54](product_weight_g) grams
+    - the weight is [340](product_weight_g) grams
+    - the weight is [450](product_weight_g) grams
+- intent: inform_length
+  examples: |
+    - The length is [30](product_length_cm) cm
+    - It is [50](product_length_cm) cm long
+    - The product length is [45](product_length_cm) cm
+    - My item is [75](product_length_cm) cm in length
+    - Length of the item is [25](product_length_cm) cm
+    - [60](product_length_cm) cm long
+    - [40](product_length_cm) cm length
+    - the length is [23](product_length_cm) cm
+    - the length is [45](product_length_cm) cm
+    - the length is [23](product_length_cm) cm
+- intent: inform_height
+  examples: |
+    - The height is [10](product_height_cm) cm
+    - It is [15](product_height_cm) cm high
+    - The product height is [25](product_height_cm) cm
+    - My item is [35](product_height_cm) cm in height
+    - Height of the product is [5](product_height_cm) cm
+    - [20](product_height_cm) cm tall
+    - [30](product_height_cm) cm in height
+    - the height is [34](product_height_cm) cm
+    - the height is [54](product_height_cm) cm
+    - the height is [54](product_height_cm) cm
+- intent: inform_width
+  examples: |
+    - The width is [20](product_width_cm) cm
+    - It is [25](product_width_cm) cm wide
+    - The product width is [10](product_width_cm) cm
+    - My item is [30](product_width_cm) cm in width
+    - Width of the product is [15](product_width_cm) cm
+    - [40](product_width_cm) cm wide
+    - [50](product_width_cm) cm in width
+    - the width is [26](product_width_cm) cm
+    - the width is [45](product_width_cm) cm
+    - the width is [54](product_width_cm) cm
+- synonym: grams
+  examples: |
+    - g
+    - gram
+    - grams
+- synonym: centimeters
+  examples: |
+    - cm
+    - centimeter
+    - centimeters
+- regex: product_length_cm
+  examples: |
+    - \b\d+ centimeters?\b
+    - \b\d+ cm\b
+- regex: product_weight_g
+  examples: |
+    - \b\d+ g\b
+    - \b\d+ grams?\b
+- lookup: product_weight_units
+  examples: |
+    - gram
+    - grams
+    - g
+- lookup: product_length_units
+  examples: |
+    - centimeter
+    - centimeters
+    - cm

@@ -1,0 +1,27 @@
+version: "3.1"
+
+rules:
+  - rule: Greet the user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Start freight value prediction form
+    steps:
+      - intent: calculate_freight_value
+      - action: freight_value_form
+      - active_loop: freight_value_form
+
+  - rule: Submit freight value form
+    condition:
+      - active_loop: freight_value_form
+    steps:
+      - action: predict_freight_value
+      - active_loop: null
+
+  - rule: Handle form fallback
+    condition:
+      - active_loop: freight_value_form
+    steps:
+      - action: action_default_fallback
+      - active_loop: null

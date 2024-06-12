@@ -1,0 +1,65 @@
+version: '3.1'
+
+intents:
+- affirm
+- deny
+- greet
+- inform_height
+- inform_length
+- inform_weight
+- inform_width
+- calculate_freight_value
+- stop
+
+entities:
+- product_height_cm
+- product_width_cm
+- product_weight_g
+- product_length_cm
+
+slots:
+  product_weight_g:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: product_weight_g
+  product_length_cm:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: product_length_cm
+  product_height_cm:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: product_height_cm
+  product_width_cm:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: product_width_cm
+
+responses:
+  utter_greet:
+  - text: Hi! I am the freight value prediction chatbot. How can I help you today?
+  utter_ask_product_weight_g:
+  - text: Can you provide the weight of the product in grams?
+  utter_ask_product_length_cm:
+  - text: Can you provide the length of the product in centimeters?
+  utter_ask_product_height_cm:
+  - text: Can you provide the height of the product in centimeters?
+  utter_ask_product_width_cm:
+  - text: Can you provide the width of the product in centimeters?
+  utter_predict_freight_value:
+  - text: 'The predicted freight value is: {freight_value:.2f} units.'
+forms:
+  freight_value_form:
+    required_slots:
+    - product_weight_g
+    - product_length_cm
+    - product_height_cm
+    - product_width_cm
+
+actions:
+- utter_greet
+- predict_freight_value
