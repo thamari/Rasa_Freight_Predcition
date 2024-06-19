@@ -83,25 +83,6 @@ Ensure that the following files are in the `actions` directory:
 
 ## Project Structure
 
-├── actions
-│ ├── scaler.pkl
-│ ├── best_xgb_model.pkl
-│ ├── freight_data.csv
-│ ├── actions.py
-├── data
-│ ├── nlu.yml
-│ ├── rules.yml
-│ ├── stories.yml
-├── models
-├── config.yml
-├── credentials.yml
-├── domain.yml
-├── endpoints.yml
-├── README.md
-
-markdown
-Copy code
-
 - `actions/`: Contains the custom action code and model files.
 - `data/`: Contains the NLU, stories, and rules data.
 - `models/`: Stores the trained models.
