@@ -25,7 +25,7 @@ This chatbot interacts with users to gather information about a product's weight
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/your-repo.git
+    git clone https://github.com/thamari/Rasa_Freight_Predcition
     cd your-repo
     ```
 
