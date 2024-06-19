@@ -1,4 +1,4 @@
-# Predict Freight Value Chatbot
+# Intelligent Logistics Assistant with Freight Prediction
 
 This project is a Rasa-based chatbot designed to predict the freight value of a product based on its dimensions and weight.
 
